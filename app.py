@@ -19,6 +19,11 @@ def contacts():
 		contacts_set = Contact.all()
 	return render_template("index.html", contacts=contacts_set)
 
+@app.route("/contacts/<contact_id>")
+def contacts_view(contact_id=0):
+	contact = Contact.find(contact_id)
+	return render_template('show.html', contact=contact)
+
 @app.route("/contacts/new", methods=['GET'])
 def contacts_new_get():
 		return render_template('new.html', contact=Contact())
