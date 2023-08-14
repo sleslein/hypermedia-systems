@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": 2,
+    "first": "Test 1",
+    "last": "Test 1",
+    "phone": "",
+    "email": "test@test.com",
+    "errors": {}
+  },
+  {
+    "id": 3,
+    "first": "test 2",
+    "last": "test 2",
+    "phone": "",
+    "email": "test2@test.com",
+    "errors": {}
+  }
+]
