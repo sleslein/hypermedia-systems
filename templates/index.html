@@ -42,5 +42,9 @@
     </div>
     <p>
         <a href="/contacts/new">Add Contact</a>
+        <span hx-get="/contacts/count" hx-trigger="revealed">
+            <img id="spinner" style="height: 20px;" class="htmx-indicator" src="/static/img/spinning-circles.svg" 
+                alt="Getting contact count" />
+        </span>
     </p>
 {% endblock %}

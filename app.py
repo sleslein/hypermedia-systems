@@ -15,6 +15,7 @@ def index():
 def contacts():
 	search = request.args.get("q")
 	page = int(request.args.get("page", 1))
+
 	if search is not None:
 		contacts_set = Contact.search(search)
 		if request.headers.get('HX-TRIGGER') == 'search':
@@ -23,6 +24,12 @@ def contacts():
 	else:
 		contacts_set = Contact.all(page)
 	return render_template("index.html", contacts=contacts_set, page=page)
+
+@app.route("/contacts/count")
+def contacts_count():
+	count = Contact.count()
+	time.sleep(.5)
+	return "(" + str(count) + " total Contacts)"
 
 @app.route("/contacts/<contact_id>")
 def contacts_view(contact_id=0):
