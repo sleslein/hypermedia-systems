@@ -25,6 +25,18 @@ def contacts():
 		contacts_set = Contact.all(page)
 	return render_template("index.html", contacts=contacts_set, page=page)
 
+@app.route("/contacts/", methods=["DELETE"])
+def contacts_delete_all():
+	contact_ids = list(map(int, request.form.getlist("selected_contact_ids")))
+	
+	for contact_id in contact_ids:
+		contact = Contact.find(contact_id)
+		contact.delete()
+	
+	flash("Deleted Contacts!")
+	contacts_set = Contact.all()
+	return render_template("index.html", contacts=contacts_set)
+
 @app.route("/contacts/count")
 def contacts_count():
 	count = Contact.count()
