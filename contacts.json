@@ -30,21 +30,5 @@
     "phone": "",
     "email": "test4@test.com",
     "errors": {}
-  },
-  {
-    "id": 5,
-    "first": "test 5",
-    "last": "test 5",
-    "phone": "",
-    "email": "test5@test.com",
-    "errors": {}
-  },
-  {
-    "id": 6,
-    "first": "test 6",
-    "last": "test 6",
-    "phone": "",
-    "email": "test6@test.com",
-    "errors": {}
   }
 ]
